@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 // import { databaseConfig } from './database.config';
 import { Dialect } from 'sequelize/types';
-import Database from './entities/database.entity';
+import Logs from 'src/entities/logs.entity';
 
 export const databaseProviders = [
   {
@@ -16,7 +16,7 @@ export const databaseProviders = [
         dialect: 'mysql' as Dialect,
       }
       const sequelize = new Sequelize(config);
-    sequelize.addModels([Database]);
+    sequelize.addModels([Logs]);
       await sequelize.sync({
         alter: true,
         // force: true
